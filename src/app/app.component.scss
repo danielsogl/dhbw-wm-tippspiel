@@ -1,0 +1,136 @@
+@import '../styles-variables';
+:host {
+  height: 100%;
+}
+
+mat-sidenav-container {
+  height: 100%;
+  .wrapper {
+    z-index: -2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-y: auto;
+    overflow: auto;
+    .toolbar {
+      position: fixed;
+      width: 100%;
+      z-index: 1;
+      flex: 0 0 auto;
+      .nav-button {
+        margin: 0 10px 0 0;
+      }
+      .branding {
+        cursor: pointer;
+        padding-top: 4px;
+        &.center {
+          text-align: center;
+        }
+        img {
+          position: relative;
+          top: -2px;
+        }
+      }
+      .sign-in-button {
+        line-height: 35px;
+        margin-right: 10px;
+      }
+      .spacer {
+        flex: 1 1 auto;
+      }
+      @media (max-width: map-get($grid-breakpoints, lg)) {
+        .nav-button {
+          min-width: 0;
+          padding: 0 10px;
+        }
+        .sign-in-button {
+          min-width: 0;
+          padding: 0 10px;
+          margin: 0 5px 0 0;
+        }
+      }
+    }
+    .content {
+      padding-top: 64px;
+      flex: 1 0 auto;
+      position: relative;
+    }
+    @media (max-width: map-get($grid-breakpoints, sm)) {
+      .content {
+        padding-top: 56px;
+      }
+    }
+    .footer {
+      padding: 12px;
+      font-size: 12px;
+      margin-top: 40px;
+      background: #3f51b5;
+      color: white;
+    }
+    .footer-list {
+      align-items: center;
+      display: flex;
+      flex-flow: row wrap;
+      padding: 8px;
+    }
+    .footer-logo {
+      flex: 1;
+    }
+    .footer-angular-logo {
+      height: 50px;
+    }
+    .footer-version {
+      flex: 1;
+      text-align: center;
+    }
+    .footer-copyright {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+      flex-direction: column;
+      min-width: 225px;
+      text-align: center;
+    }
+    .footer-logo span {
+      display: inline-block;
+      line-height: 50px;
+      margin: 0 40px;
+      vertical-align: bottom;
+      a {
+        font-size: 16px;
+        padding: 0;
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    @media screen and (max-width: 884px) {
+      .footer-list {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+mat-sidenav {
+  width: 250px;
+  .branding {
+    height: 64px;
+    padding: 8px 10px;
+    font-size: 20px;
+    font-weight: 500;
+    img {
+      margin: 0 10px 0 0;
+    }
+    span {
+      position: relative;
+      top: 3px;
+    }
+  }
+  .mat-nav-list {
+    padding-top: 0;
+  }
+}

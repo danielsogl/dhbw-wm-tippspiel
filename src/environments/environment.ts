@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyCkgQLtZX9I5kll1rZRGhDVJ5Sp5X2bfEA',
+    authDomain: 'dhbw-tippspiel.firebaseapp.com',
+    databaseURL: 'https://dhbw-tippspiel.firebaseio.com',
+    projectId: 'dhbw-tippspiel',
+    storageBucket: '',
+    messagingSenderId: '1001626493678'
+  }
 };
 
 /*

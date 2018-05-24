@@ -1,0 +1,37 @@
+<div class="toolbar">
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="d-md-none" (click)="openMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <span routerLink="" class="branding spacer center d-inline d-sm-none">
+      <img [src]="logo" />
+    </span>
+    <span routerLink="" class="branding spacer center d-none d-sm-inline d-md-none">
+      <img [src]="logo" /> WM Tippspiel</span>
+    <span routerLink="" class="branding spacer d-none d-md-inline">
+      <img [src]="logo" /> WM Tippspiel</span>
+
+    <span class="d-none d-md-inline">
+      <button mat-button class="nav-button" *ngFor="let item of navItems" [routerLink]="[item.link]" routerLinkActive="active">
+        {{ item.label }}
+      </button>
+    </span>
+
+
+    <button mat-button class="sign-in-button " *ngIf="!isAuthenticated" (click)="onLoginClick()">
+      Anmelden
+    </button>
+
+    <button *ngIf="isAuthenticated" mat-icon-button [matMenuTriggerFor]="toolbarUserMenu">
+      <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #toolbarUserMenu="matMenu">
+      <button mat-menu-item (click)="onLogoutClick()">
+        <mat-icon>power_settings_new</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+
+  </mat-toolbar>
+</div>
