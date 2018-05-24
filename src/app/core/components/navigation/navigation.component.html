@@ -12,7 +12,7 @@
     <span routerLink="" class="branding spacer d-none d-md-inline">
       <img [src]="logo" /> WM Tippspiel</span>
 
-    <span class="d-none d-md-inline">
+    <span class="d-none d-md-inline spacer">
       <button mat-button class="nav-button" *ngFor="let item of navItems" [routerLink]="[item.link]" routerLinkActive="active">
         {{ item.label }}
       </button>
@@ -27,6 +27,10 @@
       <mat-icon>person</mat-icon>
     </button>
     <mat-menu #toolbarUserMenu="matMenu">
+      <button mat-menu-item (click)="onLogoutClick()">
+        <mat-icon>power_settings_new</mat-icon>
+        <span>Profile</span>
+      </button>
       <button mat-menu-item (click)="onLogoutClick()">
         <mat-icon>power_settings_new</mat-icon>
         <span>Logout</span>

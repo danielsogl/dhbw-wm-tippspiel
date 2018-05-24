@@ -15,6 +15,18 @@ const routes: Routes = [
     loadChildren: './register/register.module#RegisterModule'
   },
   {
+    path: 'schedule',
+    loadChildren: './schedule/schedule.module#ScheduleModule'
+  },
+  {
+    path: 'teams',
+    loadChildren: './teams/teams.module#TeamsModule'
+  },
+  {
+    path: 'groups',
+    loadChildren: './groups/groups.module#GroupsModule'
+  },
+  {
     path: '**',
     redirectTo: ''
   }

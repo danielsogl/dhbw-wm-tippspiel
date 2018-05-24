@@ -7,5 +7,7 @@ export const environment = {
     projectId: 'dhbw-tippspiel',
     storageBucket: '',
     messagingSenderId: '1001626493678'
-  }
+  },
+  endpoint:
+    'https://raw.githubusercontent.com/lsv/fifa-worldcup-2018/master/data.json'
 };

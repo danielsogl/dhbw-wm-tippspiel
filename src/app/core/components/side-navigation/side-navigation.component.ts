@@ -12,10 +12,12 @@ export class SideNavigationComponent implements OnInit {
   @ViewChild('sidenav') sideNav: MatSidenav;
 
   public navItems = [
-    { link: '', label: 'Item 1' },
-    { link: '', label: 'Item 2' },
-    { link: '', label: 'Item 3' },
-    { link: '', label: 'Item 4' }
+    { link: 'schedule', label: 'Spielplan' },
+    { link: 'score', label: 'Spielstand' },
+    { link: 'teams', label: 'Mannschaften' },
+    { link: 'groups', label: 'Gruppen' },
+    { link: 'player', label: 'Mitspieler' },
+    { link: 'rules', label: 'Regeln' }
   ];
 
   constructor() {}
