@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { NgPipesModule } from 'ngx-pipes';
@@ -17,7 +18,8 @@ import { GroupsPageComponent } from './pages/groups-page/groups-page.component';
     MatCardModule,
     MatProgressBarModule,
     MatListModule,
-    NgPipesModule
+    NgPipesModule,
+    MatExpansionModule
   ],
   declarations: [GroupsPageComponent]
 })

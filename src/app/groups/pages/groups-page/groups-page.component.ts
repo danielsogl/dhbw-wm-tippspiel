@@ -17,6 +17,7 @@ export class GroupsPageComponent implements OnInit {
   ngOnInit() {
     this.loading = true;
     this.groupService.getGroups().subscribe(data => {
+      console.log('Groups', data);
       this.groups = data;
       this.loading = false;
     });

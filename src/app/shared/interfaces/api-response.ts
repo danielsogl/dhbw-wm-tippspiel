@@ -24,6 +24,7 @@ export interface Team {
   flag: string;
   emoji: string;
   emojiString: string;
+  group: string;
 }
 
 export interface Match {
