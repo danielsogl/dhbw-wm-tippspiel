@@ -27,6 +27,10 @@ const routes: Routes = [
     loadChildren: './groups/groups.module#GroupsModule'
   },
   {
+    path: 'login',
+    loadChildren: './login/login.module#LoginModule'
+  },
+  {
     path: '**',
     redirectTo: ''
   }

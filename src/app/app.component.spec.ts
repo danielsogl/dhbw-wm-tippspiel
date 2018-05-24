@@ -1,4 +1,4 @@
-import { async, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
@@ -16,6 +16,9 @@ import { NavigationComponent } from './core/components/navigation/navigation.com
 import { SideNavigationComponent } from './core/components/side-navigation/side-navigation.component';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -37,9 +40,27 @@ describe('AppComponent', () => {
       ]
     }).compileComponents();
   }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
   it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
+  }));
+
+  it('should open menu', async(() => {
+    component.openMenu();
+    expect(component.sideNav.sideNav.opened).toBeTruthy();
+  }));
+
+  it('should close menu', async(() => {
+    component.openMenu();
+    expect(component.sideNav.sideNav.opened).toBeTruthy();
+    component.closeMenu();
+    expect(component.sideNav.sideNav.opened).toBeFalsy();
   }));
 });
