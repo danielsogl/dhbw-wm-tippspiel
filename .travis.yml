@@ -23,6 +23,7 @@ jobs:
 
     - stage: deploy
       if: branch = master
+      script: skip
       deploy: &firebase
         provider: firebase
         token:
