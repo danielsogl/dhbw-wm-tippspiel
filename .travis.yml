@@ -23,8 +23,9 @@ jobs:
 
     - stage: deploy
       if: branch = master
-      script: npm run build -- --prod --progress=false
+      script: skip
       deploy: &firebase
         provider: firebase
+        script: npm run build -- --prod --progress=false
         token:
           secure: $FIREBASE_TOKEN
