@@ -35,7 +35,7 @@ describe('TeamService', () => {
       expect(data).toBeDefined();
     });
 
-    const req = httpMock.expectOne(`assets/json/teams.json`);
+    const req = httpMock.expectOne('assets/json/teams.json');
     expect(req.request.method).toBe('GET');
   });
 });

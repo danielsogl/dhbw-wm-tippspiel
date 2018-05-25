@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { NgPipesModule } from 'ngx-pipes';
 
 import { SharedModule } from '../shared/shared.module';
 import { TeamsPageComponent } from './pages/teams-page/teams-page.component';
@@ -15,7 +16,8 @@ import { TeamsRoutingModule } from './teams-routing.module';
     SharedModule,
     MatCardModule,
     MatProgressBarModule,
-    MatListModule
+    MatListModule,
+    NgPipesModule
   ],
   declarations: [TeamsPageComponent]
 })

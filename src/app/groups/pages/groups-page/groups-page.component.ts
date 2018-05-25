@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Team, Groups } from '../../../shared/interfaces/api-response';
+import { Team } from '../../../shared/interfaces/api-response';
 import { GroupsService } from '../../services/groups/groups.service';
 
 @Component({
@@ -9,16 +9,16 @@ import { GroupsService } from '../../services/groups/groups.service';
   styleUrls: ['./groups-page.component.scss']
 })
 export class GroupsPageComponent implements OnInit {
-  public groups: Groups;
+  public teams: Team[] = [];
   public loading: boolean;
 
   constructor(private groupService: GroupsService) {}
 
   ngOnInit() {
     this.loading = true;
-    this.groupService.getGroups().subscribe(data => {
-      console.log('Groups', data);
-      this.groups = data;
+    this.groupService.getTeams().subscribe(data => {
+      console.log('Teams', data);
+      this.teams = data;
       this.loading = false;
     });
   }

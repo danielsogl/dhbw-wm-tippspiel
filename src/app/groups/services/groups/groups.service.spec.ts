@@ -31,11 +31,11 @@ describe('GroupsService', () => {
   });
 
   it('should get data', () => {
-    service.getGroups().subscribe(data => {
+    service.getTeams().subscribe(data => {
       expect(data).toBeDefined();
     });
 
-    const req = httpMock.expectOne(environment.endpoint);
+    const req = httpMock.expectOne('assets/json/teams.json');
     expect(req.request.method).toBe('GET');
   });
 });

@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { NgPipesModule } from 'ngx-pipes';
 
 import { TeamService } from '../../services/team/team.service';
 import { TeamsPageComponent } from './teams-page.component';
@@ -17,7 +18,8 @@ describe('TeamsPageComponent', () => {
         MatProgressBarModule,
         MatCardModule,
         MatListModule,
-        HttpClientModule
+        HttpClientModule,
+        NgPipesModule
       ],
       providers: [TeamService],
       declarations: [TeamsPageComponent]

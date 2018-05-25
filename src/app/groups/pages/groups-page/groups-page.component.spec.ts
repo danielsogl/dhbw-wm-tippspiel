@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { NgPipesModule } from 'ngx-pipes';
 
@@ -17,7 +18,9 @@ describe('GroupsPageComponent', () => {
         MatCardModule,
         MatProgressBarModule,
         NgPipesModule,
-        HttpClientModule
+        HttpClientModule,
+        MatListModule,
+        NgPipesModule
       ],
       providers: [GroupsService],
       declarations: [GroupsPageComponent]
