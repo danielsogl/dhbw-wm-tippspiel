@@ -9,10 +9,19 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuth } from 'angularfire2/auth';
+import {
+  AngularFirestore,
+  AngularFirestoreModule
+} from 'angularfire2/firestore';
 
+import { environment } from '../../../../environments/environment';
+import { AuthService } from '../../services/auth/auth.service';
 import { NavigationComponent } from './navigation.component';
 
 describe('NavigationComponent', () => {
@@ -28,9 +37,16 @@ describe('NavigationComponent', () => {
         MatToolbarModule,
         MatIconModule,
         MatButtonModule,
-        MatMenuModule
+        MatMenuModule,
+        MatSnackBarModule,
+        AngularFireModule.initializeApp(environment.firebase)
       ],
-      declarations: [NavigationComponent]
+      declarations: [NavigationComponent],
+      providers: [
+        AuthService,
+        AngularFireAuth,
+        { provide: AngularFirestore, depends: AngularFirestoreModule }
+      ]
     }).compileComponents();
   }));
 
