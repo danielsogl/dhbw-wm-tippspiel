@@ -1,5 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-navigation',
@@ -22,9 +25,21 @@ export class NavigationComponent implements OnInit {
     { link: 'rules', label: 'Regeln' }
   ];
 
-  constructor(private router: Router) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    public snackBar: MatSnackBar
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.auth.user$.subscribe(data => {
+      if (data) {
+        this.isAuthenticated = true;
+      } else {
+        this.isAuthenticated = false;
+      }
+    });
+  }
 
   openMenu() {
     this.openSideNav.emit(true);
@@ -34,5 +49,14 @@ export class NavigationComponent implements OnInit {
     this.router.navigateByUrl('login');
   }
 
-  onLogoutClick() {}
+  onOverviewClicked() {
+    this.router.navigateByUrl('profile');
+  }
+
+  onLogoutClick() {
+    this.auth.signOut().then(() => {
+      console.log('Abgemeldet');
+      this.snackBar.open('Sie wurden abgemeldet', 'OK', { duration: 2500 });
+    });
+  }
 }

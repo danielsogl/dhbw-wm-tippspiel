@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -25,7 +26,8 @@ import { SideNavigationComponent } from './components/side-navigation/side-navig
     MatListModule,
     MatMenuModule,
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    MatSnackBarModule
   ],
   declarations: [FooterComponent, NavigationComponent, SideNavigationComponent],
   exports: [FooterComponent, NavigationComponent, SideNavigationComponent]

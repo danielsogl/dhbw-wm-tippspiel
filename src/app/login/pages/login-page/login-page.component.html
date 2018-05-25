@@ -3,21 +3,27 @@
     <div class="col-md-5 offset-md-4">
       <mat-card>
         <mat-toolbar color="primary">
-          <h1 class="text-center">Login</h1>
+          <h1 class="text-center">Anmelden</h1>
         </mat-toolbar>
         <mat-card-content>
-          <form>
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
             <mat-form-field class="full-width">
-              <input matInput placeholder="Email-Adresse" type="email">
+              <input matInput placeholder="Email-Adresse" type="email" [formControlName]="'email'">
             </mat-form-field>
 
             <mat-form-field class="full-width">
-              <input matInput placeholder="Passwort" type="password">
+              <input matInput placeholder="Passwort" type="password" [formControlName]="'password'">
             </mat-form-field>
 
-            <button mat-raised-button color="primary" class="btn-block btn-lg">Anmelden</button>
+            <button mat-raised-button color="primary" class="btn-block btn-lg" type="submit" [disabled]="loginForm.invalid">Anmelden</button>
 
           </form>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div class="text-center">
+            <a [routerLink]="'/register'" [routerLinkActive]="'active'">Konto erstellen</a>
+          </div>
         </mat-card-content>
       </mat-card>
     </div>
