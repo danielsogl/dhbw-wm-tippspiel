@@ -1,11 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TeamPipe } from './pipes/team/team.pipe';
+import { NgModule } from '@angular/core';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [TeamPipe]
+  imports: [CommonModule],
+  declarations: []
 })
-export class SharedModule { }
+export class SharedModule {}
